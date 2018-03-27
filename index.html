@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NBA Stars</title>
+    <script>src="https://code.jquery.com/jquery-3.3.1.min.js"</script>
+    
+    
+    
+    
+</head>
+
+<body>
+        <button data-search ="lebron James">lebron James</button>
+        <button data-search ="Kevin love">Kevin love</button>
+        <button data-search ="Kevin Garnet">Kevin Garnet</button>
+        <button data-search ="Michael jordan">Michael jordan</button>
+        <button data-search ="Larry Bird">Larry Bird</button>
+        <button data-search ="Magic Johnson">Magic Johnson</button>
+        <button data-search ="Anthony Towns">Anthony Towns</button>
+        <button data-search ="Allen Iverson">Allen Iverson</button>
+        <button data-search ="Wiggins">Wiggins</button>
+
+        <script type="text/javascript">
+            $('button').on('click',function(){
+                var x =$(this).data("search");
+                
+
+                var queryURL = "https://api.giphy.com/v1/gifs/search?q="+x+" & api_key =VrO69BRlwil6ieN0EbdA1nar7ZiZKdgx";
+
+
+                
+                $.ajax({URL:queryURL,method:"GET"})
+                .done(function(response){
+                    console.log(response);
+                })
+            })
+        </script>
+    
+</body>
+</html>
